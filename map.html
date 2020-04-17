@@ -31,6 +31,38 @@
     					apikey: 'pk.eyJ1IjoiYXJuYWIxIiwiYSI6ImNrOHpmejR0ODByNjkzZnM3OWt0bmI3M2UifQ.PAZc5B0in-sgqAI0_taB4A',
 			}).addTo(mymap);
 
+
+        locations_data = [
+            {
+                "lat": 23.952,
+                "long": 88.078
+            },
+            {
+                "lat": 23.948,
+                "long": 88.18
+            },
+            {
+                "lat": 23.968,
+                "long": 88.01
+            },
+            {
+                "lat": 23.978,
+                "long": 88.18
+            }
+        ]
+        
+        console.log(locations_data)
+
+        for (var i = locations_data.length - 1; i >= 0; i--) {
+        
+            var marker = L.marker([locations_data[i].lat, locations_data[i].long]).addTo(mymap);
+              L.circle([locations_data[i].lat, locations_data[i].long], 500, {
+              color: 'red',
+              fillColor: '#f03',
+              fillOpacity: 0.5
+            }).addTo(mymap)
+
+        }
    			
    		</script>
 	</body>
